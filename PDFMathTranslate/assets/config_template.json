@@ -1,0 +1,66 @@
+{
+  "translate": {
+    "lang_in": "en",
+    "lang_out": "ar",
+    "service": "bing",
+    "thread": 4,
+    "pages": null,
+    "ocr": false,
+    "dual": false,
+    "mono": true,
+    "debug": false,
+    "interactive": false
+  },
+  "output": {
+    "dir": "./translated",
+    "naming": "{filename}_AR",
+    "overwrite": false
+  },
+  "engines": {
+    "google": {
+      "enabled": true,
+      "rate_limit": 100,
+      "thread": 2
+    },
+    "bing": {
+      "enabled": true,
+      "rate_limit": 200,
+      "thread": 4
+    },
+    "libretranslate": {
+      "enabled": false,
+      "url": "http://localhost:5000/translate",
+      "api_key": null
+    },
+    "silicon": {
+      "enabled": false,
+      "api_key": "${SILICON_API_KEY}"
+    },
+    "openai": {
+      "enabled": false,
+      "api_key": "${OPENAI_API_KEY}",
+      "model": "gpt-4o"
+    },
+    "gemini": {
+      "enabled": false,
+      "api_key": "${GEMINI_API_KEY}",
+      "model": "gemini-2.0-flash"
+    },
+    "deepl": {
+      "enabled": false,
+      "api_key": "${DEEPL_API_KEY}"
+    }
+  },
+  "batch": {
+    "delay_seconds": 5,
+    "timeout_per_file": 600,
+    "continue_on_error": true,
+    "max_retries": 2
+  },
+  "validation": {
+    "check_arabic_text": true,
+    "check_fonts": true,
+    "check_page_count": true,
+    "min_arabic_chars": 50
+  }
+}
